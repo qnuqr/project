@@ -1,40 +1,34 @@
 "use strict";
-let num = 20;
 
-function showFirstMessage(text) {
-    console.log(text);
-    let num = 30;
-    console.log(num);
-}
+let str = 'Anuar';
 
-showFirstMessage('Salem');
-console.log(num);
+let arr = [2, 3, 5];
 
-// function calc(a, b) {
-//     return(a + b);
-// }
+//console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str);
 
-// console.log(calc(4, 6));
-// console.log(calc(8, 9));
-// console.log(calc(4, 1));
+let fruit = "Some fruit";
+console.log(fruit.indexOf("q"));
 
-function ret() {
-    let num = 50;
-    return num;
-}
+const logg = "Saslem Alem";
 
-const anotherNum = ret();
-    console.log(anotherNum);
+console.log(logg.slice(6, 10));
+console.log(logg.substring())
 
-const logger = function() {
-    console.log('Anuar');
-};
-
-logger();
-
-const calc = (a, b) => {
-    console.log()
-}
+const name1 = 'Askar Batyrov';
+console.log(name1.length);
+console.log(name1.slice(5, 13));
 
 
+const name2 = 'Askar Batyrov';
+console.log(name2.slice(-3, -1));
 
+
+//Числа!!!
+const num = 15.3; 
+console.log(Math.round(num)); //округление
+
+const test = '15.2px';
+console.log(parseInt(test));
+console.log(parseFloat(test));
