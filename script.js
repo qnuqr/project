@@ -1,25 +1,50 @@
 "use strict";
 
-function first() {
-    setTimeout(function() {
-        console.log(1);
-    }, 500);
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log("Test");
+    }
+};
+
+// options.makeTest();
+
+const {border, bg} = options.colors;
+console.log(border);
+
+console.log(options["name"],["colors"]);
+
+
+
+// delete options.name;
+
+// console.log(options);
+
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Свйойство ${i} имеет значения ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свйойство ${key}, имеет значения ${options[key]}`);
+    }
+    
 }
 
-function second() {
-    console.log(2);
-}
+const actors = {
+    gender: 'men',
+    role: 'positive character',
+    movie: 'Marvel',
+    genre: {
+        action:'Tranporter',
+        fantasy: 'Iron man'
+    }
+};
 
-first();
-second();
-
-function learnJS(lang, callback) {
-    console.log(`Я учу: ${lang} `);
-    callback();
-}
-
-function done() {
-    console.log('Я прошел этот урок!');
-}
- 
-learnJS('Java script', done);
+console.log(Object.keys(actors).length);
