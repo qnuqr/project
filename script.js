@@ -1,50 +1,33 @@
 "use strict";
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log("Test");
-    }
-};
+const arr = [4, 21, 7, 19, 6, 52];
 
-// options.makeTest();
+arr.sort(compareNum);
+console.log(arr);
 
-const {border, bg} = options.colors;
-console.log(border);
-
-console.log(options["name"],["colors"]);
-
-
-
-// delete options.name;
-
-// console.log(options);
-
-for (let key in options) {
-    if (typeof(options[key]) === 'object') {
-        for (let i in options[key]) {
-            console.log(`Свйойство ${i} имеет значения ${options[key][i]}`);
-        }
-    } else {
-        console.log(`Свйойство ${key}, имеет значения ${options[key]}`);
-    }
-    
+function compareNum(a, b) {
+    return a - b;
 }
+// arr.pop();
+// arr.push(10);
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
 
-const actors = {
-    gender: 'men',
-    role: 'positive character',
-    movie: 'Marvel',
-    genre: {
-        action:'Tranporter',
-        fantasy: 'Iron man'
-    }
-};
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
 
-console.log(Object.keys(actors).length);
+// console.log(arr);
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//     console.log(value);
+// } 
+
+const str = prompt("", "");
+const products = str.split(", ");
+products.sort();
+console.log(products.join('; '));
