@@ -1,33 +1,30 @@
 "use strict";
 
-const arr = [4, 21, 7, 19, 6, 52];
+let str = "some";
+let strObj = new String(str);
 
-arr.sort(compareNum);
-console.log(arr);
+// console.log(typeof(str));
+// console.log(typeof(strObj));
 
-function compareNum(a, b) {
-    return a - b;
-}
-// arr.pop();
-// arr.push(10);
-// arr[99] = 0;
-// console.log(arr.length);
-// console.log(arr);
+console.dir([1,2,3]);
 
-// arr.forEach(function(item, i, arr) {
-//     console.log(`${i}: ${item} внутри массива ${arr}`);
-// });
+const soldier = {
+    health: 400,
+    armor: 200,
+    sayHello: function() {
+        console.log("Salem!!!")
+    }
+};
 
-// console.log(arr);
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
+const jonh = Object.create(soldier);
 
-// for (let value of arr) {
-//     console.log(value);
-// } 
+// const jonh = {
+//     health: 100
+// };
 
-const str = prompt("", "");
-const products = str.split(", ");
-products.sort();
-console.log(products.join('; '));
+// jonh.__proto__ = soldier;
+
+// Object.setPrototypeOf(jonh, soldier);
+
+// console.log(jonh.armor);
+jonh.sayHello();
