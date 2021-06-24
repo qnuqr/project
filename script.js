@@ -1,30 +1,78 @@
 "use strict";
 
-let str = "some";
-let strObj = new String(str);
+let numberOfFilms;
 
-// console.log(typeof(str));
-// console.log(typeof(strObj));
 
-console.dir([1,2,3]);
 
-const soldier = {
-    health: 400,
-    armor: 200,
-    sayHello: function() {
-        console.log("Salem!!!")
-    }
+const personalMovieDB = {
+    count: 0,
+    movies:{},
+    actors: {},
+    genres:[],
+    privat: false, 
+    start: function() {
+        personalMovieDB.count = +prompt('сколько фильмов ты посмотрел?', '');
+   
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('сколько фильмов ты посмотрел?', '');
+        }
+   }, 
+   rememberMyFilms: function() {
+    for (let i  = 0; i < 2; i++) {
+        const a = prompt('один из последних просмотренных фильмов?', ''),
+              b = prompt('На сколько оцените его?', '' );
+    
+              if(a != null && b != null && a != '' && b != '' && a.length < 50) {
+                personalMovieDB.movies[a] = b;
+                console.log('done');
+             } else {
+                 console.log('error');
+                 i--;
+             }    
+         }
+    },
+    detectPersonalLevel:function() {
+        if(personalMovieDB.count < 10) {
+            console.log('Просмотрено довольно мало фильмов');
+        } else if(personalMovieDB.count >= 10 && personalMovieDB < 30) {
+            console.log('Вы классический зритель');
+        } else if(personalMovieDB.count >= 30) {
+            console.log('Вы киноман');
+        } else {
+            console.log('Error')
+        }
+    },
+    showMyDB: function(hidden) {
+        if (!hidden) {
+            console.log(personalMovieDB);
+        }
+    },
+
+    toggleVisibleMyDB: function() {
+        if (personalMovieDB.privat) {
+            personalMovieDB.privat = false;   
+        } else {
+            personalMovieDB.privat = true;   
+        } 
+    },
+
+    writeYourGenres: function() {
+        for(let i = 1; i <= 3; i++) {
+            let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+            if(genre === '' || genre == null) {
+               console.log('Вы ввели некоректноые данные или не ввели их вовсе'); 
+               i--;
+            } else {
+                personalMovieDB.genres[i - 1] = genre;
+            }  
+        }
+
+        personalMovieDB.genres.forEach((item, i) => {
+             console.log(`Любимый жанр ${i + 1} - это ${item}`);  
+        });
+    }  
 };
 
-const jonh = Object.create(soldier);
+  
 
-// const jonh = {
-//     health: 100
-// };
 
-// jonh.__proto__ = soldier;
-
-// Object.setPrototypeOf(jonh, soldier);
-
-// console.log(jonh.armor);
-jonh.sayHello();
