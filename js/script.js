@@ -1,36 +1,38 @@
-'use strict';
+"use strict";
+const btn = document.querySelector('.btn');
+let wait,
+    i = 0;
 
-class Rectangle {
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
-    }
+function myAnimation() {
+    const elem = document.querySelector('.box');
+    let pos = 0;
 
-    calcArea() {
-        return this.height * this.width;
-    }
-}
+    const id = setInterval(frame, 10);
 
-class ColoredRectangleWithText extends Rectangle {
-    constructor(height, width, text, bgColor) {
-        super(height, width);
-        this.text = text;
-        this.bgColor = bgColor;
-    }
-
-    showMyProps() {
-        console.log(`Текст: ${this.text}, цвет: ${this.bgColor}`);
+    function frame() {
+        if(pos == 300) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px"; 
+        }
     }
 }
 
-const div = new ColoredRectangleWithText(25, 10, 'Salem Alem', 'green');
+btn.addEventListener('click', myAnimation);
+// btn.addEventListener('click', () => {
+//     // const wait = setTimeout(logger, 3000);
+//     wait = setInterval(logger, 500);
 
-div.showMyProps();
-console.log(div.calcArea());
+// });
 
+  
 
-// const square = new Rectangle(8, 10);
-// const long = new Rectangle(1000, 55);
-
-// console.log(long.calcArea());
-// console.log(square.calcArea());
+// function logger() {
+//     if (i === 8) {
+//         clearInterval(wait);
+//     }
+//     console.log('Sapa');
+//     i++;
+// }

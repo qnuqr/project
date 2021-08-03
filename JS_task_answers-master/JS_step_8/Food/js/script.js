@@ -133,7 +133,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    const modalTimerId = setTimeout(openModal, 5000);
+    // const modalTimerId = setTimeout(openModal, 5000);
 
     function showModalByScroll () {
         if(window.pageYOffset + document.documentElement.clientHeight >= document.
@@ -145,4 +145,19 @@ window.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', showModalByScroll);
 
+    // Используем классы для карточек
+
     });
+
+    let num = 5;
+    const leftU = 1;
+
+    num = 12;
+    console.log(num);
+
+    const obj = {
+        a: 8
+    };
+
+    obj.a = 7;
+    console.log(obj);
