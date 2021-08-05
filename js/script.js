@@ -1,25 +1,18 @@
 "use strict";
 
-const now = new Date();
-// console.log(now.getFullYear());
-// console.log(now.getMinutes());
-// console.log(now.getDay());
-// console.log(now.getDate());
-// console.log(now.getHours());
-// console.log(now.getUTCHours());
+class Rectangle {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
 
-
-// console.log(now.getTimezoneOffset());
-
-
-console.log(now.setHours(45));
-console.log(now);
-let start = new Date();
-
-for (let i = 0; i < 100000; i ++) {
-    let b = i ** 3;
+    calcArea() {
+        return this.height * this.width;
+    }
 }
 
-let end = new Date();
+const square = new Rectangle(20, 2);
+const long = new Rectangle(15, 4);
 
-alert(`Цикл отработал за ${end - start} милисекунд`);
+console.log(square.calcArea());
+console.log(long.calcArea());
