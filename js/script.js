@@ -1,20 +1,25 @@
-"use strict";
+// "use strict";
 
-const persone = {
-    name: 'Anuar',
-    id: 123456,
-    tel: '8729696296',
-    parents: {
-        m: 'Aaa',
-        d: 'Ddddd'
-    }
-};
-
-const clone = JSON.parse(JSON.stringify(persone));
-clone.parents.m = 'MMM';
-console.log(clone);
-console.log(persone);
+console.log('Запрос данных...');
 
 
-console.log(JSON.parse(JSON.stringify(persone)));
 
+setTimeout(() => {
+    console.log('Подготовка данных...');
+
+    const product = {
+        name: 'PS',
+        price: 2500
+    };
+
+    setTimeout(() => {
+        product.status = 'ordered';
+        console.log(product);
+    }, 2000);
+
+}, 2000);
+
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
