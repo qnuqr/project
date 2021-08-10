@@ -326,6 +326,4 @@ window.addEventListener('DOMContentLoaded', function() {
 
     }
 
-  
-
 });
