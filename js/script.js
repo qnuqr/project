@@ -55,17 +55,34 @@
 
 
 
-const obj = {
-    anuar: 'persone',
-    ann: 'persone',
-    dog: 'pet',
-    cat: 'pet'
-};
+// const obj = {
+//     anuar: 'persone',
+//     ann: 'persone',
+//     dog: 'pet',
+//     cat: 'pet'
+// };
 
-const newArr = Object.entries(obj)
-.filter(item => item[1] === 'persone')
-.map(item => item[0]);
+// const newArr = Object.entries(obj)
+// .filter(item => item[1] === 'persone')
+// .map(item => item[0]);
 
-console.log(newArr);
+// console.log(newArr);
 
 
+// const p = new Promise((resolve, reject) => {
+//     console.log('Message send!');
+//     setTimeout(() => {
+//         console.log('Messages accepted');
+//         reject({status: 'ошибкаа!!!'});
+//     }, 2000);
+// });
+
+// p
+// .then((data) => {
+//     return new Promise(() => {
+//         console.log('Второй промис');
+//     });
+// })
+// .then((data) => console.log(data))
+// .catch(error => console.log(error))
+// .finally(() => console.log('some response'));
