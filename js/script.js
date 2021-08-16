@@ -1,19 +1,14 @@
-"use strict";
 
-const person = {
-    name: "Anuar",
-    age: 25,
 
-    get userAge() {
-        return this.age;
-    },
+function User (name, age) {
+    this.name = name;
+    let userAge = age;
 
-    set userAge(num) {
-        this.age = num;
-    }
-};
+    this.say = function() {
+        console.log(`Имя пользователя: ${this.name}, возраст: ${userAge}`);
+    };
 
-console.log(person.userAge = 30);
+anuar.age = 30;
+anuar.name = "Alex";
 
-console.log(person.userAge);
-
+anuar.say();
